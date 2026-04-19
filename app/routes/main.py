@@ -11,3 +11,7 @@ def index():
 @main_bp.route("/about")
 def about():
     return "<h1>About our Donation Platform</h1>"
+
+@main_bp.route("/register")
+def register():
+    return render_template("register.html")
