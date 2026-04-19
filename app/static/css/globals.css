@@ -2,5 +2,26 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: #F8FAFc;
+}
+main {
+background-color: #F8FAFc;
+}
+.topnav {
+  padding: 0 18px;
+  margin: 0;
+  z-index: 88;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 80;
+  background: #FEFEFE;
+  box-shadow: 4px 8px 3px 3px #F8FAFc88;
+}
+.topnav + hr {
+  margin: 0;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
