@@ -20,3 +20,6 @@ instance/
 
 # Git
 .DS_Store
+
+
+app.db
