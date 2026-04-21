@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+<style>
+  :root {
+    --bd-size: 0.15rem;
+    --bd-color: #f2f2f2;
+    --bd-rad: 0.25rem;
+  }
+  
+  #cont {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  #cont > * {
+    border: var(--bd-size) solid var(--bd-color);
+    border-radius: var(--bd-rad);
+    padding: 15px 18px;
+  }
+  
+  @media only screen and (min-width: 700px) {
+    #cont { grid-template-columns: 45% 1fr }
+  }
+  @media only screen and (min-width: 1240px) {
+    #cont { grid-template-columns: 38% 1fr }
+  }
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<section id="cont" class="container-fluid">
+  <aside class="container">
+    <form role="search">
+      <input name="search" type="search" placeholder="Search for hospital.." />
+      <input type="submit" value="Search" />
+    </form>
+    
+    <form>
+      <h2>Filter Requests</h2>
+      <hr />
+      <div class="grid">
+        <select name="type" aria-label="type" required>
+          <option selected value="all">Type</option>
+          <option onclick="console.log('selected!')">Hospitals</option>
+          <option>Direct</option>
+        </select>
+        
+        <select name="country" aria-label="Country" required>
+          <option selected value="all">Country</option>
+          <option>The Gambia</option>
+          <option>Nigeria</option>
+          <option>Niger</option>
+          <option>Somalia</option>
+        </select>
+      </div>
+      <fieldset>
+        <legend>Donation Amount:</legend>
+        <div class="grid">
+          <span>$1</span>
+          <span style="text-align: right;">$10k</span>
+        </div>
+        <input style="margin-top: 12px;" type="range" id="amount" name="amount" min="0" max="10000">
+      </fieldset>
+      
+      <input type="submit" value="Filter" />
+    </form>
+  </aside>
+  <section>
+    
+  </section>
+</section>
+
+{% endblock %}

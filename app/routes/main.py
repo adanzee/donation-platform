@@ -18,6 +18,11 @@ def register():
     return render_template("register.html")
 
 
+@main_bp.route("/requests")
+def requests():
+    return render_template("requests.html")
+
+
 @main_bp.route("/d-donor")
 def donor_dashboard():
     return render_template("dashboards/donor.html")
