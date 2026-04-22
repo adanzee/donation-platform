@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block css %}
+
+<style>
+  :root {
+    --bd-size: 0.15rem;
+    --bd-color: #f2f2f2;
+    --bd-rad: 0.25rem;
+  }
+  
+  #cont {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  #cont > * {
+    border: var(--bd-size) solid var(--bd-color);
+    border-radius: var(--bd-rad);
+    padding: 15px 18px;
+  }
+  
+  @media only screen and (min-width: 700px) {
+    #cont { grid-template-columns: 45% 1fr }
+  }
+  @media only screen and (min-width: 1240px) {
+    #cont { grid-template-columns: 38% 1fr }
+  }
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+<section id="cont" class="container-fluid">
+  <aside class="container">
+    <form role="search">
+      <input name="search" type="search" placeholder="Search for hospital.." />
+      <input type="submit" value="Search" />
+    </form>
+    
+    <form>
+      <h2>Filter Requests</h2>
+      <hr />
+      <div class="grid">
+        <select name="type" aria-label="type" required>
+          <option selected value="all">Type (All)</option>
+          <option value="hospital">Hospitals</option>
+          <option value="direct">Direct</option>
+        </select>
+        
+        <select name="country" aria-label="Country" required>
+          <option selected value="all">Country (All)</option>
+          <option value="the-gambia">The Gambia</option>
+          <option value="nigeria">Nigeria</option>
+          <option value="niger">Niger</option>
+          <option value="somalia">Somalia</option>
+        </select>
+      </div>
+      <div class="grid">
+        <select name="priority" aria-label="priority" required>
+          <option selected value="all">Priority (All)</option>
+          <option value="very-high">VERY HIGH</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="flexible">Flexible</option>
+        </select>
+        
+        <select name="amount" aria-label="amount" required>
+          <option selected value="lowest">Lowest first $</option>
+          <option value="highest">Highest first $$$</option>
+        </select>
+      </div>
+      
+      
+      
+      <input type="submit" value="Filter" />
+    </form>
+  </aside>
+  <section>
+    
+  </section>
+</section>
+
+{% endblock %}
