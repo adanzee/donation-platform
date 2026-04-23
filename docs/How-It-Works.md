@@ -76,10 +76,22 @@ Person Y buys the medicine and gets healthy 💊
 
 ## 🏥🏧 Scenario 3: Hospital Verification
 
-1. Hospital applies on platform
-2. Platform verifies: license, physical address, stamp
-3. Hospital gets **verified badge** ✅
-4. Donors trust verified hospitals more
+1. Hospital applies on platform via `/signup-hospital`
+2. Hospital **has to fill strict form fields and upload legal documents verified by the government**
+3. Admin verifies: license, physical address, stamp **IF NOT TRUSTED OR SOMETHING MISSING/WRONG -> HE CAN REFUSE IT**
+4. Hospital gets **verified badge** ✅
+5. Donors trust verified hospitals 
+
+--- 
+
+## 🔔 Scenario 4: Notification System
+
+1. Donor X follows hospital Y 
+2. Hospital Y requested a new donation 
+3. Donor X gets a notification in `/notifications` 
+4. Donor X donates to the hospital 😊
+
+**Note:** for donors' privacy, No one can see the profile's donor or info except his name, country and donated money are seen by the hospital only.
 
 ---
 
