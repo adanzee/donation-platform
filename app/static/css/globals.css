@@ -24,3 +24,7 @@
 .topnav + hr {
   margin: 0;
 }
+
+a img {
+  vertical-align: top;
+}
