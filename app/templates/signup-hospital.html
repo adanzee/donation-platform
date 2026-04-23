@@ -3,7 +3,7 @@
 {% block css %}
 
 <style>
-h1, .end-link {
+h1 {
   text-align: center;
 }
 section {
@@ -17,7 +17,7 @@ section {
 {% block content %}
 
 <section>
-  <h1>Register your hospital for Free ✨</h1>
+  <h1>Register your hospital for Free <img src="{{ url_for('static', filename='icons/sparkle.svg') }}" style="width: 2.5rem; vertical-align: top;"></h1>
   
   <form method="POST">
     <label for="name">
@@ -201,8 +201,8 @@ section {
     </fieldset>
     
     <input type="submit" value="Create Account" />
-    <a href="/contact">Facing any issues? Contact Us</a>
-    <p><small>⏳ After submitting, our team will review your application within 48 hours. You'll receive an email when approved.</small></p>
+    <a href="/contact">Need help? Contact Us</a>
+    <p><small><img src="{{ url_for('static', filename='icons/hourglass-low.svg') }}" style="width: 1.2rem"> After submitting, our team will review your application within 48 hours. You'll receive an email when approved.</small></p>
   </form>
 </section>
 

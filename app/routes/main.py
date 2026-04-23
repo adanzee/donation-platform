@@ -21,6 +21,11 @@ def signup():
 @main_bp.route("/signup-hospital")
 def signup_hospital():
     return render_template("signup-hospital.html")
+    
+    
+@main_bp.route("/login-hospital")
+def login_hospital():
+    return render_template("login-hospital.html")
 
 
 @main_bp.route("/requests")
