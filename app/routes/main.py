@@ -13,9 +13,14 @@ def about():
     return "<h1>About our Donation Platform</h1>"
 
 
-@main_bp.route("/register")
-def register():
-    return render_template("register.html")
+@main_bp.route("/signup")
+def signup():
+    return render_template("signup.html")
+
+
+@main_bp.route("/signup-hospital")
+def signup_hospital():
+    return render_template("signup-hospital.html")
 
 
 @main_bp.route("/requests")

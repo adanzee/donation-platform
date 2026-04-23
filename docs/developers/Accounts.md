@@ -47,9 +47,9 @@ When the form is filled and Create Account button clicked, a message with these 
 
 **Checkboxs**
 
-- I Swear to be 100% honest, treat people in need for free and ask for donations with true verified numbers & bills  
-- I agree when caught lying the platform has the full right to involve the police and international courts against me
-- I accpet terms and polices by CareBridge
+- I swear to be 100% honest, to treat people in need for free, and to ask for donations using true, verified numbers and bills.
+- I agree that if I am caught lying, the platform has the full right to involve the police and international courts against me.
+- I accept the terms and policies by CareBridge
 
 #### Login Form
 
