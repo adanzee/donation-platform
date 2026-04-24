@@ -2,9 +2,10 @@
 
 ## 🛠️ Tech Stack Focus
 
-* **Backend:** Flask (Application Factory Pattern)
-* **Database:** SQLite with Flask-SQLAlchemy
-* **Frontend:** HTMX for dynamic updates + Pico.css
+* **Frontend:** Preact.js, Wouter (Routing), & Pico.css
+* **Backend:** Node.js & Express.js
+* **Database:** MongoDB Atlas (Mongoose)
+* **Package Manager:** pnpm
 
 ---
 
@@ -13,87 +14,79 @@
 ### 1. Fork & Clone
 
 * Click the **'Fork'** button on the main repository.
-* Clone **your fork** to your local machine (run that onetime only!):
+* Clone **your fork** to your local machine:
     ```bash
-    git clone https://github.com/YOUR_USERNAME/donation-platform.git
+    git clone [https://github.com/YOUR_USERNAME/CareBridge.git](https://github.com/YOUR_USERNAME/CareBridge.git)
     
-    cd donation_platform
+    cd CareBridge
     
-    git remote add upstream https://github.com/care-bridge/platform.git
+    git remote add upstream [https://github.com/omar-hossam/CareBridge.git](https://github.com/omar-hossam/CareBridge.git)
     ```
 
-2.  **Set up Virtual Environment & Install modules:** `python make.py init && python make.py setup`
+### 2. Install Dependencies
 
-3.  **Run:** `python make.py run`
-    
-### The Feature Workflow (Do this for every task!)
-
-Always work on a branch. Never code directly on main.
-
-1. Sync with the team:
-
+Make sure you have [pnpm](https://pnpm.io/installation) installed:
 ```bash
-git checkout main
-git pull upstream main
+pnpm install
 ```
 
-2. Create your task branch: `git checkout -b feature/your-task-name`
+### 3. Environment Setup
 
-3. Code THEN Test THEN Run: `python make.py test && python make.py run`
-
-4. Lint your code when done: `python make.py lint`
-
-5. Push to your fork:
-
-use **Conventional Commits** but keep it simple and easy for you, don't over engineer, make it simple like that:
+### 4. Run Development Server
 
 ```bash
-git add .
-git commit -m "feat: implement models.py"
-git push origin feature/your-task-name
+pnpm dev
 ```
-
-6. Submit Your Work:
-
-- Go to the original repository on GitHub.
-- Click "Compare & Pull Request".
-- Briefly describe your changes and tag a teammate for a quick review.
-
-7. Read *Coding Standards below*
-
----
 
 ## 🏗️ Development Workflow
 
-### 1. Database Changes
+### The Feature Workflow (Do this for every task!)
 
-If you need to change the data structure:
+Always work on a branch. Never code directly on `main`.
 
-* Modify `app/models.py`.
+1. **Sync with the team:**
+    ```bash
+    git checkout main
+    git pull upstream main
+    ```
 
-### 2. Adding Routes
+2. **Create your task branch:** 
+   
+   ```bash
+    git checkout -b feature/your-task-name
+    ```
 
-* **Don't** add routes to `app.py`.
-* **Do** add them to the appropriate Blueprint in `app/routes/` (e.g., `auth.py`, `donations.py`).
-* Register new Blueprints in `app/__init__.py`.
+3. **Code & Test:** Ensure the app runs without errors and your changes work as expected using `pnpm dev`.
 
-### 3. Frontend & HTMX
+4. **Push to your fork:**
+    Use **Conventional Commits** (keep it simple):
+    ```bash
+    git add .
+    git commit -m "feat: implement user donation history"
+    git push origin feature/your-task-name
+    ```
 
-* We aim for a Single Page Application (SPA) feel without heavy JavaScript.
-* Use HTMX attributes (`hx-get`, `hx-post`, `hx-target`) to swap HTML fragments.
-* Store small, reusable snippets (for HTMX) in `app/templates/partials/`.
-* Reusable components in `app/templates/macros.html` using flask's built-in feature `macros`
+5. **Submit Your Work:**
+    - Go to the original [omar-hossam/CareBridge](https://github.com/omar-hossam/CareBridge) repository on GitHub.
+    - Click **"Compare & Pull Request"**.
+    - Briefly describe your changes and tag a teammate for a quick review.
 
----
+## 📐Project Architecture
+
+### 1. Backend & Database
+
+### 2. Frontend (Preact + Wouter)
+* **Components:** Reusable UI elements go in `src/components/`.
+* **Pages:** Main views/screens go in `src/pages/`.
+* **Routing:** Use **Wouter** for navigation. Define routes in `src/App.jsx`.
+* **Styling:** We use **Pico.css** for a lightweight, semantic CSS approach. Utilize Pico's built-in variables for consistency.
 
 ## 📜 Coding Standards
 
-* **Python styling:** Very important to run `python make.py lint` 
-* **Docstrings:** Briefly explain the purpose of new routes or models.
-* **Privacy:** Always anonymize patient data in the UI.
-* **DON'T EDIT make.py file!**
-
----
+* **JS Styling:** Use standard JavaScript naming conventions (camelCase).
+* **Async Logic:** Use `async/await` for all asynchronous operations (API calls, DB queries).
+* **Privacy:** Always ensure sensitive data is handled securely and never hardcode credentials.
+* **Security:** Always anonymize patient/donor data in the UI.
 
 ## 💬 Communication
 
