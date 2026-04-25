@@ -2,7 +2,7 @@
 
 ## 🛠️ Tech Stack Focus
 
-* **Frontend:** Preact.js, Wouter (Routing), & Pico.css
+* **Frontend:** [11ty](https://www.11ty.dev/), [Pico.css (styling)](https://www.picocss.com) & [HTMX](https://www.htmx.org)
 * **Backend:** Node.js & Express.js
 * **Database:** MongoDB Atlas (Mongoose)
 * **Package Manager:** pnpm
@@ -75,10 +75,11 @@ Always work on a branch. Never code directly on `main`.
 
 ### 1. Backend & Database
 
-### 2. Frontend (Preact + Wouter)
-* **Components:** Reusable UI elements go in `src/components/`.
-* **Pages:** Main views/screens go in `src/pages/`.
-* **Routing:** Use **Wouter** for navigation. Define routes in `src/App.jsx`.
+### 2. Frontend (11ty + Picocss + HTMX)
+
+* **Components:** Reusable UI elements go in `_components/`.
+* **Pages:** Main views/screens go in `content/`.
+* **Layout:** Main layout is located in `_includes/`.
 * **Styling:** We use **Pico.css** for a lightweight, semantic CSS approach. Utilize Pico's built-in variables for consistency.
 
 ## 📜 Coding Standards
