@@ -2,10 +2,10 @@
 
 ## 🛠️ Tech Stack Focus
 
-* **Frontend:** [11ty](https://www.11ty.dev/), [Pico.css (styling)](https://www.picocss.com) & [HTMX](https://www.htmx.org)
-* **Backend:** Node.js & Express.js
-* **Database:** MongoDB Atlas (Mongoose)
-* **Package Manager:** pnpm
+* **Frontend:** [11ty](https://www.11ty.dev/), [Pico.css](https://www.picocss.com) & [HTMX](https://www.htmx.org)
+* **Backend:** [FastAPI](https://fastapi.tiangolo.com/) (Python)
+* **Database:** MongoDB Atlas (PyMongo/Motor)
+* **Package Manager:** pnpm (frontend) + pip (backend)
 
 ---
 
@@ -25,17 +25,34 @@
 
 ### 2. Install Dependencies
 
-Make sure you have [pnpm](https://pnpm.io/installation) installed:
+Make sure you have [pnpm](https://pnpm.io/installation) and [python](https://www.python.org) installed.
+
+**Frontend (11ty):**
+
 ```bash
 pnpm install
 ```
 
-### 3. Environment Setup
-
-### 4. Run Development Server
+**Backend (FastAPI):**
 
 ```bash
-pnpm dev
+cd backend
+pip install -r requirements.txt
+```
+
+### 3. Run Development Server
+
+**Frontend (terminal 1):**
+
+```bash
+pnpm dev # Runs 11ty on localhost:8080
+```
+
+**Backend (terminal 2):**
+
+```bash
+cd backend
+uvicorn main:app --reload  # Runs on localhost:8000
 ```
 
 ## 🏗️ Development Workflow
@@ -75,6 +92,12 @@ Always work on a branch. Never code directly on `main`.
 
 ### 1. Backend & Database
 
+- **FastAPI** handles all dynamic routes and returns HTML fragments
+- **MongoDB Atlas** stores all application data
+- **Motor** (async PyMongo) for database operations
+- All endpoints accept `application/x-www-form-urlencoded` (HTMX default)
+- Every endpoint **MUST** returns HTML, not JSON
+
 ### 2. Frontend (11ty + Picocss + HTMX)
 
 * **Components:** Reusable UI elements go in `_components/`.
@@ -84,10 +107,11 @@ Always work on a branch. Never code directly on `main`.
 
 ## 📜 Coding Standards
 
-* **JS Styling:** Use standard JavaScript naming conventions (camelCase).
-* **Async Logic:** Use `async/await` for all asynchronous operations (API calls, DB queries).
-* **Privacy:** Always ensure sensitive data is handled securely and never hardcode credentials.
-* **Security:** Always anonymize patient/donor data in the UI.
+* **HTMX Attributes:** Keep them inline in HTML, not in JS files
+* **No frontend JS complexity** - HTMX handles all interactivity
+* **Security:** Never trust user input - validate everything + Always anonymize patient/donor data in the UI.
+* **HTML Fragments:** Keep them minimal (no full page structure)
+* **Error Handling:** Always catch DB errors and return user-friendly HTML
 
 ## 💬 Communication
 

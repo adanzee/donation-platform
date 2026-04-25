@@ -1,18 +1,18 @@
 # CareBridge Tasks
 
 ## Authentication & Users
-- [ ] 1. Login page (email/password)
-- [ ] 2. Signup page (email/password + role selection: donor/individual/hospital)
-- [ ] 3. Hospital registration form (long form: name, country, city, address, establishment date, website, email, phone, workers count, Google Maps link, legal docs PDF, logo, manager photo, exterior photo, interior photo, questions, checkboxes) sends to the Admin
+- [X] 1. Login page (email/password)
+- [X] 2. Signup page (email/password + role selection: donor/individual/hospital)
+- [X] 3. Hospital registration form (long form: name, country, city, address, establishment date, website, email, phone, workers count, Google Maps link, legal docs PDF, logo, manager photo, exterior photo, interior photo, questions, checkboxes) 
 - [ ] 4. Admin approval page for pending hospitals
 - [ ] 5. Role-based access control (admin/donor/individual/hospital)
 
 ## Navigation & UI
-- [ ] 6. Responsive navbar
+- [X] 6. Responsive navbar
 - [ ] 7. Replace login button with profile icon if logged in (HTMX + backend)
 - [ ] 8. Footer (all pages)
 - [ ] 9. Loading states for HTMX requests
-- [ ] 10. Success/error toasts (Alpine.js)
+- [ ] 10. Success/error toasts (HTMX, Pico.css)
 - [ ] 11. Mobile menu
 
 ## Pages

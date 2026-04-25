@@ -34,8 +34,8 @@ For **detailed scenarios** (patient direct, hospital flow, donor verification), 
 | Layer | Technology |
 | :--- | :--- |
 | Frontend | 11ty + Pico.css + HTMX |
-| Backend | Node.js + Express.js + MongoDB Atlas |
-| Deployment | Netlify (frontend) + ? (backend) |
+| Backend | FastAPI (Python) + MongoDB Atlas |
+| Deployment | Netlify (frontend) + Render (backend) |
 
 > Lightweight, fast, and works on low-end devices.
 
@@ -45,11 +45,10 @@ For **detailed scenarios** (patient direct, hospital flow, donor verification), 
 
 | Old | New |
 | :--- | :--- |
-| Python/Flask/SQLite | Node.js/Express/MongoDB Atlas |
+| Python/Flask/SQLite | Python/FastAPI/MongoDB |
 | Vanilla JS + HTMX | 11ty + HTMX |
 | Single repo structure | Split `frontend/` + `backend/` |
 | `make.py` | `pnpm dev` commands |
-| Removed `requirements.txt` | Added `package.json` references |
 
 Ready to ship 🚀
 
@@ -57,7 +56,7 @@ Ready to ship 🚀
 
 ## 💻 Run Locally
 
-We use **pnpm** for both frontend and backend.
+We use **pnpm** for the frontend and **pip** for the backend.
 
 **Frontend:**
 ```bash
@@ -69,8 +68,8 @@ pnpm dev
 **Backend:**
 ```bash
 cd backend
-pnpm install
-pnpm dev
+pip install -r requirements.txt
+uvicorn main:app --reload
 ```
 
 **Voilà! ⚡**
